@@ -2,17 +2,27 @@
 
 // far si che quando clicco sull'hamburger si attivi il div con classe hamburger-mune e active e quando riclicco che torni tutto normale
 
-// 1. aggiungere la classe active all'hamburger menù quando clicco l'icona hamburger
+// selezionare l'hamburger-menu per verificare in console le classi che ha all'inizio
 const HamburgerHideList = document.querySelector('.hamburger-menu');
 console.log(HamburgerHideList.classList.value);
 
-const HamburgerBtn = document.querySelector('div.header-right a')
-
-HamburgerBtn.addEventListener('click', function (){
-  HamburgerHideList.classList.add ('active');
+// selezionare l'icona dell'hamburger affinché possa usarla come evento (il click)
+const HamburgerBtn = document.querySelector('div.header-right > a');
+// impostare l'evento del click sull'icona dell'hamburger per aggiungere la classe active al div.hamburger-menu
+HamburgerBtn.addEventListener('click', function () {
+  HamburgerHideList.classList.add('active');
+  console.log('classi quando clicco icona hamburger:', HamburgerHideList.classList.value);
 });
-console.log(HamburgerHideList.classList.value);
-//  2. quando clicco sull'icona della croce rimuovo la classe active dall'hamburger menu
+
+// selezionare l'icona della croce affinché possa usarla come evento (il click)
+const CloseBtn = document.querySelector('div.hamburger-menu > a.close');
+// impostare l'evento del click sull'icona della croce per rimuovere la classe active al div.hamburger-menu
+CloseBtn.addEventListener('click', function () {
+  HamburgerHideList.classList.remove('active');
+  console.log('classi quando clicco icona croce:', HamburgerHideList.classList.value);
+});
+
+
 
 
 
